@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-staging
+  name: web-dvwa
+  namespace: default
+spec:
+  rules:
+  - host:  web-dvwa.local
+    http:
+      paths:
+      - backend:
+          serviceName: web-dvwa
+          servicePort: 80
+        path: /
+  tls:
+  - hosts:
+    -  web-dvwa.local
+    secretName: myingress-cert
