@@ -19,3 +19,4 @@ Step 2
 * [ ] `kubectl create -f deployment.yml`
 * [ ] `kubectl create -f ingress.yml`
 
+Step 3
